@@ -1,3 +1,11 @@
+<% if product.errors.any? %>
+  <div id="error_explanation">
+    <% product.errors.full_messages.each do |message| %>
+      <i><%= message %></i>
+    <% end %>
+  </div>
+<% end %>
+
 <%= form_with model: product do |form| %>
   <div>
     <%= form.label :name %>
